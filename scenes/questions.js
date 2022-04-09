@@ -15,6 +15,7 @@ module.exports = new Scene(
   "questions",
   (ctx) => {
     ctx.scene.next();
+    bot.sendMessage(ctx.message.from_id, messages.hello);
     ctx.reply(
       "1. Какого Вы пола?",
       null,

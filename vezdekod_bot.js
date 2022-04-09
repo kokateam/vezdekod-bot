@@ -15,7 +15,7 @@ const { makeButton } = require("./modules/makeButton");
 const getMeme = require("./modules/getMeme");
 
 // Init bot instance
-const bot = new VkBot(process.env.TOKEN);
+global.bot = new VkBot(process.env.TOKEN);
 
 const session = new Session();
 const stage = new Stage(questions);
@@ -101,7 +101,6 @@ bot.on(async (ctx) => {
 
   switch (message.text.toLowerCase()) {
     case "привет":
-      ctx.reply(messages.hello);
       ctx.scene.enter("questions");
       break;
     case "статистика":
